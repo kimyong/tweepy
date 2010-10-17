@@ -108,7 +108,7 @@ class Stream(object):
                 conn.request('POST', self.url, self.body, headers=self.headers)
                 resp = conn.getresponse()
                 if resp.status != 200:
-                    if self.listener.on_error(resp.status) is False:
+                    if self.listener.on_error(resp) is False:
                         break
                     error_counter += 1
                     sleep(self.retry_time)
