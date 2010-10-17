@@ -67,7 +67,7 @@ class Stream(object):
 
     host = 'stream.twitter.com'
 
-    def __init__(self, auth, listener, **options):
+    def __init__(self, auth, listener, headers=None, **options):
         self.auth = auth
         self.listener = listener
         self.running = False
